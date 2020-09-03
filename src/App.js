@@ -8,7 +8,6 @@ import {Route, Switch} from 'react-router-dom';
 import HomePage from '../src/pages/homepage/homepage.component'
 
 function App({movies}) {
-  console.log('movies App can see:>> ', movies);
   return (
     <div>
       <Switch>

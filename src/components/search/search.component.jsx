@@ -4,6 +4,8 @@ import CustomButton from '../custom-button/custom-button.component';
 import {connect} from 'react-redux';
 import {fetchMovies} from '../../redux/movies/movies.actions'
 
+import './search.styles.scss'
+
 class Search extends Component {
 
     state = {
@@ -24,7 +26,7 @@ class Search extends Component {
         const {search} = this.state
         const {handleChange, handleSubmit} = this
         return (
-            <div className='search-form' >
+            <div className='search' >
                 <form onSubmit={handleSubmit}>
                 <FormInput handleChange={handleChange} name='search' type='text' value={search} label='search' required/>
                 <CustomButton type='submit'>Search</CustomButton>
