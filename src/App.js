@@ -1,17 +1,26 @@
 import React from 'react';
 import './App.css';
-import Search from './components/search/search.component';
-import SelectedContainer from './components/selected-container/selected-container.component';
-import Directory from './components/directory/directory.component';
 
-function App() {
+import {connect} from 'react-redux';
+
+import {Route, Switch} from 'react-router-dom';
+
+import HomePage from '../src/pages/homepage/homepage.component'
+
+function App({movies}) {
+  console.log('movies App can see:>> ', movies);
   return (
-    <div className="App">
-      <SelectedContainer/>
-      <Search/>
-      <Directory/>
+    <div>
+      <Switch>
+        <Route exact path='/home' component={HomePage}/>
+        {/* <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUp/>)}/> */}
+      </Switch>
     </div>
   );
 }
 
-export default App;
+const msp = ({movies}) => ({
+  movies: movies.movies
+})
+
+export default connect(msp)(App);
