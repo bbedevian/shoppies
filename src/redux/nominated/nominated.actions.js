@@ -1,4 +1,4 @@
-export const setCurrentUser = movie => ({
+export const nominateMovie = movie => ({
     type: 'NOMINATE_MOVIE',
     payload: movie
 })

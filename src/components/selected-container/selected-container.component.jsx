@@ -1,14 +1,17 @@
 import React from 'react';
+import MovieCard from '../movie-card/movie-card.component'
 import {connect} from 'react-redux'
 import './selected-container.styles.scss'
 
 const SelectedContainer = ({nominated}) => {
     return (
-        <div className='selected-container'>
+        <div>
             <h1>Currently selected</h1>
-            {nominated.map((movie, index) => (
-                <h1 key={index}> {movie.Title}</h1>
-            ))}
+            <div className='selected-container'>
+                {nominated.map((movie, index) => (
+                    <MovieCard key={index} movie={movie} selected={true}/>
+                ))}
+            </div>
         </div>
     );
 }

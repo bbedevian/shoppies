@@ -4,15 +4,22 @@ import SelectedContainer from '../../components/selected-container/selected-cont
 import Search from '../../components/search/search.component';
 import Directory from '../../components/directory/directory.component';
 
+import {connect} from 'react-redux'
 
-const HomePage = () => {
+
+const HomePage = ({movies, nominated}) => {
     return (
         <div className='homepage'>
             <SelectedContainer/>
-            <Search/>
+            {nominated.length >= 5 ? <h1> Submit Banner</h1> : <Search/> }
             <Directory/>
         </div>
     );
 }
 
-export default HomePage;
+const msp = ({movies, nominated}) => ({
+    movies: movies.movies,
+    nominated: nominated.nominated
+  })
+
+export default connect(msp)(HomePage);
