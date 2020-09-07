@@ -5,7 +5,7 @@ This site is built using React library and utilizes Redux for state management a
 In addition, a simple Firebase Firestore db has been utilized to make sure users cannot vote more than once (per email)
 
 The deployed version of this app can be found here
-https://confident-nobel-4e2a6e.netlify.app/
+https://bb-shoppies-submission.netlify.app
 
 
 Cheers,
