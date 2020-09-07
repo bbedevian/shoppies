@@ -1,8 +1,8 @@
 import axios from 'axios';
-const API_KEY = 'get ya own key';
+const API_KEY = 'get ya own key!';
 
 export function fetchMovies(search) {
-    const URL = `http://www.omdbapi.com/?s=${search}&apikey=${API_KEY}`
+    const URL = `http://www.omdbapi.com/?s=${search}&type=movie&apikey=${API_KEY}`
     return dispatch => {
         return axios.get(URL)
         .then(res => {

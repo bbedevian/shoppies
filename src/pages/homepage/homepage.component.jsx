@@ -5,13 +5,16 @@ import Search from '../../components/search/search.component';
 import Directory from '../../components/directory/directory.component';
 
 import {connect} from 'react-redux'
+import SubmitBanner from '../../components/submit-banner/submit-banner.component';
+
 
 
 const HomePage = ({movies, nominated}) => {
+
     return (
         <div className='homepage'>
             <SelectedContainer/>
-            {nominated.length >= 5 ? <h1> Submit Banner</h1> : <Search/> }
+            {nominated.length >= 5 ? <SubmitBanner/> : <Search/> }
             <Directory/>
         </div>
     );

@@ -3,23 +3,28 @@ import './App.css';
 
 import {connect} from 'react-redux';
 
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 
 import HomePage from '../src/pages/homepage/homepage.component'
+import SignUp from '../src/pages/sign-up/sign-up.component'
+import ThankYou from './pages/thank-you/thank-you.component';
 
-function App({movies}) {
+
+function App({currentUser}) {
+  console.log('currentUser :>> ', currentUser);
   return (
     <div>
       <Switch>
-        <Route exact path='/home' component={HomePage}/>
-        {/* <Route exact path='/signin' render={() => this.props.currentUser ? (<Redirect to='/' />) : (<SignInSignUp/>)}/> */}
+        <Route exact path='/home' render={() => currentUser ? currentUser.submitted ? (<Redirect to='/thankyou' />) : (<HomePage/>) : (<Redirect to='/' />)}/>
+        <Route exact path='/' render={() => currentUser ? (<Redirect to='/home' />) : (<SignUp/>)}/>
+        <Route exact path='/thankyou' component={ThankYou}/>
       </Switch>
     </div>
   );
 }
 
-const msp = ({movies}) => ({
-  movies: movies.movies
+const msp = ({user}) => ({
+  currentUser: user.currentUser
 })
 
 export default connect(msp)(App);
