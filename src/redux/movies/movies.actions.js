@@ -2,7 +2,7 @@ import axios from 'axios';
 const API_KEY = 'cbd8c38d';
 
 export function fetchMovies(search) {
-    const URL = `http://www.omdbapi.com/?s=${search}&type=movie&apikey=${API_KEY}`
+    const URL = `https://www.omdbapi.com/?s=${search}&type=movie&apikey=${API_KEY}`
     return dispatch => {
         return axios.get(URL)
         .then(res => {

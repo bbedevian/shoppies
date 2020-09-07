@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import FormInput from '../form-input/form-input.component'
-import CustomButton from '../custom-button/custom-button.component';
 import {connect} from 'react-redux';
 import {fetchMovies} from '../../redux/movies/movies.actions'
 
@@ -20,20 +19,12 @@ class Search extends Component {
         this.props.fetchMovies(value)
     }
 
-    handleSubmit = e => {
-        e.preventDefault();
-        this.props.fetchMovies(this.state.search)
-    }
-
     render() {
         const {search} = this.state
-        const {handleChange, handleSubmit} = this
+        const {handleChange} = this
         return (
             <div className='search' >
-                <form onSubmit={handleSubmit}>
                 <FormInput handleChange={handleChange} name='search' type='text' value={search} label='search' required/>
-                <CustomButton type='submit'>Search</CustomButton>
-                </form>
             </div>
         );
     }
