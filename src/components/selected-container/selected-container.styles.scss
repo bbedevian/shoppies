@@ -3,4 +3,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+
+    .selected-text {
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-size: 22px;
+    }
 }

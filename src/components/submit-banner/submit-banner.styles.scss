@@ -1,0 +1,18 @@
+$main-color: #96BF45;
+$sub-color: rgba(95,142,61, 0.5);
+
+.banner{
+    background: $main-color;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    box-shadow: 0 8px 16px 0 $sub-color, 0 6px 20px 0 $sub-color, ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+
+

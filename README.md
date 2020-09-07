@@ -1,11 +1,9 @@
-Next to do:
-- add button / "Banner" to submit once 5 are nominated, this can go in place of 
+Thank you for viewing my submission for the winter '21 internship program! 
 
+This site is built using React library and utilizes Redux for state management as well as SASS for styling. 
 
-Then: 
-sign in page for taking in a users email
-&
-Backend check for already submitted
+In addition, a simple Firebase Firestore db has been utilized to make sure users cannot vote more than once (per email)
 
+Cheers,
+BB
 
-cbd8c38d

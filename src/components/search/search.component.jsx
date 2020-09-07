@@ -17,6 +17,7 @@ class Search extends Component {
     handleChange = e => {
         const {name, value} = e.target
         this.setState({[name]: value})
+        this.props.fetchMovies(value)
     }
 
     handleSubmit = e => {

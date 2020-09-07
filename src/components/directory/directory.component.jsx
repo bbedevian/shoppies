@@ -11,12 +11,12 @@ const Directory = ({movies,nominated}) => {
             maxNominated ? 
                 null 
             :
-                movies.length > 0 ? 
-                movies.map((movie, index) => (
-                    <MovieCard key={index} movie={movie}/>
+                movies && movies.length > 0 ? 
+                movies.map((movie) => (
+                    <MovieCard key={movie.imdbID} movie={movie}/>
                 )) 
                 : 
-                <span className='no-movies'>Search for some movies first</span>
+                null
             }
         </div>
     );

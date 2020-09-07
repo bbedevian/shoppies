@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import FormInput from '../../components/form-input/form-input.component'
 import CustomButton from '../../components/custom-button/custom-button.component'
 import {connect} from 'react-redux'
-
 import {firestore} from '../../firebase/firebase.utils'
+
+import './sign-up.styles.scss'
 
 
 class SignUp extends Component {
@@ -54,11 +55,12 @@ class SignUp extends Component {
         const {handleChange, handleSubmit} = this
         return (
         <div className='sign-up'>
-            <h1>Welcome to the Shoppies First Annual Nomination Site</h1>
+            <h1>Welcome to the Shoppies Nomination Site</h1>
+            <h1>Our First Annual Movie Awards</h1>
             <h3>Please enter your email to get started</h3>
             <form onSubmit={handleSubmit}>
                 <FormInput handleChange={handleChange} name='email' type='email' value={email} label='email' required/>
-                <CustomButton type='submit'>Submit</CustomButton>
+                <CustomButton type='submit'>GET STARTED</CustomButton>
             </form>
         </div>
         );

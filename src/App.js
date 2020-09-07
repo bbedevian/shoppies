@@ -11,14 +11,17 @@ import ThankYou from './pages/thank-you/thank-you.component';
 
 
 function App({currentUser}) {
-  console.log('currentUser :>> ', currentUser);
   return (
-    <div>
+    <div className='app'>
       <Switch>
         <Route exact path='/home' render={() => currentUser ? currentUser.submitted ? (<Redirect to='/thankyou' />) : (<HomePage/>) : (<Redirect to='/' />)}/>
         <Route exact path='/' render={() => currentUser ? (<Redirect to='/home' />) : (<SignUp/>)}/>
         <Route exact path='/thankyou' component={ThankYou}/>
       </Switch>
+      <span>
+      Presented by
+      </span>
+      <img src="shopify_logo_black.png" alt="shopify logo" width="75" height="auto"></img>
     </div>
   );
 }
