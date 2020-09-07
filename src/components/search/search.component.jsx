@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {fetchMovies} from '../../redux/movies/movies.actions'
 
 import './search.styles.scss'
+import Spinner from '../spinner/spinner.component';
 
 class Search extends Component {
 
@@ -20,15 +21,21 @@ class Search extends Component {
     }
 
     render() {
+        console.log('this.props.movies :>> ', this.props.movies);
         const {search} = this.state
         const {handleChange} = this
         return (
             <div className='search' >
                 <FormInput handleChange={handleChange} name='search' type='text' value={search} label='search' required/>
+                {this.props.movies.length === 0 && search.length > 0 ? <Spinner/> : null}
             </div>
         );
     }
 }
+
+const msp = ({movies}) => ({
+    movies: movies.movies
+  })
 
 const mdp = (dispatch) => {
     return {
@@ -36,4 +43,4 @@ const mdp = (dispatch) => {
     }
   }
 
-export default connect(null, mdp)(Search);
+export default connect(msp, mdp)(Search);
